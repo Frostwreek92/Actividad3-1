@@ -13,10 +13,13 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.actividad3_1.codes.DessertClickerApp
+import com.example.actividad3_1.data.Datasource
 import com.example.actividad3_1.ui.theme.Actividad31Theme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        enableEdgeToEdge()
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
@@ -26,7 +29,7 @@ class MainActivity : ComponentActivity() {
                         .fillMaxSize()
                         .statusBarsPadding()
                 ) {
-
+                    DessertClickerApp(desserts = Datasource.dessertList)
                 }
             }
         }
